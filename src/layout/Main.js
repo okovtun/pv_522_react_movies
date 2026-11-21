@@ -1,4 +1,4 @@
-import React from 'react';
+Ôªøimport React from 'react';
 import './Main.css';
 import MovieList from '../components/MovieList';
 import Preloader from '../components/Preloader';
@@ -12,14 +12,14 @@ class Main extends React.Component
 		}
 	componentDidMount()
 	{
-		//›Ú‡ ÙÛÌÍˆËˇ ÌÂˇ‚ÌÓ ‚˚Á˚‚‡ÂÚÒˇ ‚ÒˇÍËÈ ‡Á, ÍÓ„‰‡ ÍÓÏÔÓÌÂÌÚ ÒÏÓÌÚËÓ‚‡ÎÒˇ Ì‡ ÒÚ‡ÌËˆÛ
+		//–≠—Ç–∞ —Ñ—É–Ω–∫—Ü–∏—è –Ω–µ—è–≤–Ω–æ –≤—ã–∑—ã–≤–∞–µ—Ç—Å—è –≤—Å—è–∫–∏–π —Ä–∞–∑, –∫–æ–≥–¥–∞ –∫–æ–º–ø–æ–Ω–µ–Ω—Ç —Å–º–æ–Ω—Ç–∏—Ä–æ–≤–∞–ª—Å—è –Ω–∞ —Å—Ç—Ä–∞–Ω–∏—Ü—É
 		fetch('http://www.omdbapi.com/?s=The%20Transporter&apikey=94dbc433')
 			.then(response => response.json())
 			.then(data => this.setState({movies:data.Search}))
 	}
-	searchMovie = (str) =>
+	searchMovie = (str, type='all') =>
 	{
-		fetch(`http://www.omdbapi.com/?s=${str}&apikey=94dbc433`)
+		fetch(`http://www.omdbapi.com/?s=${str}${type !== 'all' ? `&type=${type}` : ''}&apikey=94dbc433`)
 			.then(response => response.json())
 			.then(data => this.setState({ movies: data.Search }));
 	}
@@ -29,7 +29,8 @@ class Main extends React.Component
 			<main>
 				<Search searchMovie={ this.searchMovie } />
 				{
-					this.state.movies.length==0 ?
+					this.state.movies == null ? <h1>–í–≤–µ–¥–∏—Ç–µ –ø–æ–∏—Å–∫–æ–≤—ã–π –∑–∞–ø—Ä–æ—Å</h1>:
+					this.state.movies.length == 0 ?
 					<Preloader /> :
 					<MovieList movies={this.state.movies} />
 				}
