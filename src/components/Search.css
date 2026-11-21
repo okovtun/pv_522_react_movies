@@ -1,0 +1,16 @@
+﻿.search
+{
+		padding:2.4%;
+}
+	.search input
+	{
+		font-size:20px;
+		width:100%;
+		border:0;
+		text-align:center;
+	}
+		.search input:focus
+		{
+			outline:none;
+			border-bottom: solid 1px #AAA;
+		}
