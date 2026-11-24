@@ -27,3 +27,19 @@
 		border:none;
 		border-radius:8px;
 	}
+.radio
+{
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	margin:0 32px;
+	padding:16px;
+	border-bottom:solid 1px lightgray;
+
+	font-size:24px;
+}
+	.radio input[type=radio]
+	{
+		width:20px;
+		height:20px;
+	}
