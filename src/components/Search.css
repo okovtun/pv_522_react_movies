@@ -1,13 +1,13 @@
 ﻿.search
 {
-		padding:2.4%;
+		padding:2% 2.4% 0;
 		display:flex;
 		justify-content:space-between;
 		align-items:center;
 }
 	.search input
 	{
-		font-size:24px;
+		font-size:32px;
 		width:100%;
 		border:0;
 		text-align:center;
@@ -17,16 +17,15 @@
 			outline:none;
 			border-bottom: solid 1px #AAA;
 		}
-	.search button
+	/*.search button
 	{
 		background-color: #005c84;
 		color:white;
-		/*margin:8px;*/
 		padding:0px 16px;
 		font-size:24px;
 		border:none;
 		border-radius:8px;
-	}
+	}*/
 .radio
 {
 	display:flex;
@@ -43,3 +42,29 @@
 		width:20px;
 		height:20px;
 	}
+
+.pagination
+{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+	.pagination > button
+	{
+		margin:8px 32px;
+	}
+.btn
+{
+	background-color:#006E81;
+	color:white;
+	border:none;
+	border-radius:4px;
+	font-size:20px;
+	margin:4px;
+	width:80px;
+	height:42px;
+}
+.page-numbers > button
+{
+	width:42px;
+}
